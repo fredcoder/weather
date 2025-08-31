@@ -6,7 +6,7 @@ export const currentLocationType = 'currentLocationType';
 export const getCurrentWeather = ({language, latitude, longitude, measurement}) => {
     return (dispatch) => {
         //debugger;
-        return axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${measurement}&lang=${language}&exclude=minutely&appid=6b8d8c2d191bb346e8d93bf8b04895ba`)
+        return axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${measurement}&lang=${language}&exclude=minutely&appid=6b8d8c2d191bb346e8d93bf8b04895ba`)
             .then((response) => {
                 dispatch(getWeather(response.data, measurement));
             })
